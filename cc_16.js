@@ -22,3 +22,17 @@ function fetchProductsThen() {
     })
 
 }
+
+//Task 3: Fetch Products with async/await
+async function fetchProductsAsync() {
+    try {
+        const response = await fetch(BASE_URL);
+        if (!response.ok) {
+            throw new Error(`Failure fetching data`);
+        }
+        const products = await response.json();
+        displayProducts(products);
+    } catch (error) {
+        handleError(error);
+    }
+}
