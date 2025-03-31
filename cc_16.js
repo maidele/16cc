@@ -36,3 +36,42 @@ async function fetchProductsAsync() {
         handleError(error);
     }
 }
+
+//Task 4: Display the Products
+
+function displayProducts(products) {
+    // 
+    const productContainer = document.getElementById('#product-container');
+    
+    const fiveProducts = products.slice(0,5);
+    fiveProducts.forEach(product => {
+
+        const productCard = document.createElement('div');
+        productCard.setAttribute('class','product-card');
+
+      // Element for product's name 
+      const productName = document.createElement('h3');
+      productPrice.setAttribute('class', 'product-header');
+      productName.textContent = product.fields.name;
+  
+      // Element for the product's price 
+      const productPrice = document.createElement('p');
+      productPrice.setAttribute('class', 'product-price');
+      productPrice.textContent = '$' + product.fields.price;
+
+      // Element fo the product's image 
+      const productImage = document.createElement('img');
+      productImage.src = product.image;
+      productImage.width = 200;
+      productImage.height = 2000;
+  
+      // Append for the elements
+      productCard.appendChild(productName);
+      productCard.appendChild(productPrice);
+      productCard.appendChild(productImage);
+  
+      // Append the product container
+      productContainer.appendChild(productCard);
+    })
+}
+
