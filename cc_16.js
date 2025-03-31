@@ -75,3 +75,12 @@ function displayProducts(products) {
     })
 }
 
+//Task 5:Reusable Error Handler
+
+function handleError(error) {
+    console.error('Error has occurred:', error);
+  } //This is the function fir the handler for reusable error
+
+  //Task 6: Call Your Fetch Functions
+  fetchProductsThen();    // uses .then() to call fetch function
+  fetchProductsAsync();   // uses async to call fetch function
